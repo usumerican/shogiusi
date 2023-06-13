@@ -1,1 +1,1 @@
-# shogiusi
+# Shogi USI Demo

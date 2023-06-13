@@ -1,0 +1,20 @@
+{
+  "name": "shogiusi",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "eslint": "^8.42.0",
+    "prettier": "^2.8.8",
+    "vite": "^4.3.9"
+  },
+  "dependencies": {
+    "coi-serviceworker": "^0.1.6",
+    "wasm-feature-detect": "^1.5.1"
+  }
+}

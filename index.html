@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <script src="coi-serviceworker.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Shogi USI REPL in mobile browser" />
+    <meta name="theme-color" content="#fd0" />
+    <title>Shogi USI Demo</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" href="icon.png" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <link rel="stylesheet" href="src/shogiusi.css" />
+    <script src="lib/sse42/yaneuraou.js" defer></script>
+    <script src="lib/nosimd/yaneuraou.js" defer></script>
+    <script type="module" src="src/shogiusi.js"></script>
+  </head>
+  <body>
+    <form class="UsiForm">
+      <a href="." class="UsiHeader"></a>
+      <pre class="UsiOutput"></pre>
+      <div class="UsiFooter">
+        <input class="UsiInput" placeholder="Enter USI command" />
+        <select class="UsiSelect">
+          <option></option>
+          <option>usi</option>
+          <option>getoption</option>
+          <option>isready</option>
+          <option>usinewgame</option>
+          <option>d</option>
+          <option>moves</option>
+          <option>position startpos</option>
+          <option>position startpos moves 2g2f</option>
+          <option>position startpos moves 7g7f</option>
+          <option>matsuri</option>
+          <option>go</option>
+          <option>go btime 0 wtime 0 byoyomi 1000</option>
+          <option>go mate infinite</option>
+          <option>stop</option>
+        </select>
+        <button>➤</button>
+      </div>
+    </form>
+  </body>
+</html>
