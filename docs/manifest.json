@@ -1,5 +1,5 @@
 {
-  "name": "Shogi USI Demo",
+  "name": "Shogi USI REPL",
   "short_name": "Shogi USI",
   "start_url": ".",
   "display": "standalone",

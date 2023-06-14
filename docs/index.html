@@ -1,25 +1,37 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <script src="coi-serviceworker.min.js"></script>
-    <meta charset="UTF-8" />
+  <head prefix="og: http://ogp.me/ns# website: http://ogp.me/ns/website#">
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="Shogi USI REPL in mobile browser" />
+    <meta name="description" content="Shogi USI interactive shell for mobile and desktop browsers" />
     <meta name="theme-color" content="#fd0" />
-    <title>Shogi USI Demo</title>
+    <meta property="og:url" content="https://usumerican.github.io/shogiusi/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://usumerican.github.io/shogiusi/icon.png" />
+    <meta property="og:title" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@usumerican" />
+    <title>Shogi USI REPL</title>
+    <link rel="canonical" href="https://usumerican.github.io/shogiusi/" />
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" type="image/png" href="icon.png" />
     <link rel="apple-touch-icon" href="icon.png" />
     
+    <script src="coi-serviceworker.min.js" async></script>
     <script src="lib/sse42/yaneuraou.js" defer></script>
     <script src="lib/nosimd/yaneuraou.js" defer></script>
     
-    <script type="module" crossorigin src="./assets/index-b61c07cc.js"></script>
-    <link rel="stylesheet" href="./assets/index-94362d26.css">
+    <script type="module" crossorigin src="./assets/index-48e9edb6.js"></script>
+    <link rel="stylesheet" href="./assets/index-d12d305a.css">
   </head>
   <body>
     <form class="UsiForm">
-      <a href="." class="UsiHeader"></a>
+      <header class="UsiHeader">
+        <button class="InfoButton" type="button" title="Info">ℹ️</button>
+        <div class="TitleOutput"></div>
+        <button class="ReloadButton" type="button" title="Reload">🔄</button>
+      </header>
       <pre class="UsiOutput"></pre>
       <div class="UsiFooter">
         <input class="UsiInput" placeholder="Enter USI command" />
@@ -31,16 +43,15 @@
           <option>usinewgame</option>
           <option>d</option>
           <option>moves</option>
-          <option>position startpos</option>
           <option>position startpos moves 2g2f</option>
-          <option>position startpos moves 7g7f</option>
+          <option>position sfen 3sks3/9/4+P4/9/9/B8/9/9/9 b S2rb4gs4n4l17p 1</option>
           <option>matsuri</option>
           <option>go</option>
           <option>go btime 0 wtime 0 byoyomi 1000</option>
           <option>go mate infinite</option>
           <option>stop</option>
         </select>
-        <button>➤</button>
+        <button title="Enter">↩️</button>
       </div>
     </form>
   </body>

@@ -30,9 +30,20 @@ addEventListener('DOMContentLoaded', async () => {
   const simdValue = await simd();
   let engine;
 
-  document.querySelector('.UsiHeader').textContent = `${document.title} ${__APP_VERSION__}`;
+  document.querySelector('.TitleOutput').textContent = `${document.title} ${__APP_VERSION__}`;
+  document.querySelector('meta[property="og:title"]').content = document.title;
+  document.querySelector('meta[property="og:description"]').content =
+    document.querySelector('meta[name="description"]').content;
   print(`# crossOriginIsolated: ${window.crossOriginIsolated}`);
   print(`# simd: ${simdValue}`);
+
+  document.querySelector('.InfoButton').onclick = async () => {
+    open('https://github.com/usumerican/shogiusi', '_blank', 'noreferrer');
+  };
+
+  document.querySelector('.ReloadButton').onclick = async () => {
+    location.reload();
+  };
 
   usiSelect.onchange = async () => {
     usiInput.value = usiSelect.value;
