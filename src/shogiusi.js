@@ -31,9 +31,6 @@ addEventListener('DOMContentLoaded', async () => {
   let engine;
 
   document.querySelector('.TitleOutput').textContent = `${document.title} ${__APP_VERSION__}`;
-  document.querySelector('meta[property="og:title"]').content = document.title;
-  document.querySelector('meta[property="og:description"]').content =
-    document.querySelector('meta[name="description"]').content;
   print(`# crossOriginIsolated: ${window.crossOriginIsolated}`);
   print(`# simd: ${simdValue}`);
 
